@@ -26,6 +26,7 @@
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
+<<<<<<< HEAD
     border-radius: 30px; 
     padding: 20px;
     height: 100%;
@@ -71,4 +72,24 @@ footer {
 
 aside {
     width: 15%;
+=======
+    border-radius: 5px; 
+}
+
+
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+    display: flex;
+    
+>>>>>>> 7041506c73d77cf29629b783c40c30494e3f6e20
 }
