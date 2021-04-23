@@ -2,19 +2,19 @@
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: #008cff 0px 0px 10px; 
-    border-radius: 5px; 
+    border-radius: 15px; 
 }
 
 #market {
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
-    border-radius: 5px; 
+    border-radius: 15px; 
 }
 
 #Watchlist {
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
-    border-radius: 5px; 
+    border-radius: 15px; 
 }
