@@ -18,3 +18,20 @@
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
     border-radius: 5px; 
 }
+
+
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+    display: flex;
+    
+}
