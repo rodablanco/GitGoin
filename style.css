@@ -2,23 +2,81 @@
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: #008cff 0px 0px 10px; 
-    border-radius: 15px; 
+    border-radius: 30px; 
+    padding: 20px;
+    min-height: 400px;
+    color: greenyellow;
+    font-weight: bold;
+    text-align: center;
 }
 
 #market {
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
-    border-radius: 15px; 
+    border-radius: 30px; 
+    height: fit-content;
+    min-height: 200px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 #Watchlist {
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
+
     border-radius: 15px; 
 }
 
 .section {
     display:flex; 
+
+    border-radius: 30px; 
+    padding: 20px;
+    height: 100%;
+    text-align: center;
+}
+
+.section {
+    background-color: grey;
+}
+
+body {
+    background-color: grey;
+}
+
+.columns {
+    color: greenyellow;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: grey;
+    
+}
+
+.title {
+    color: greenyellow;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: greenyellow;
+    font-size: 20px;
+}
+
+footer {
+    background-color: grey;
+}
+
+.column {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+aside {
+    width: 15%;
+
 }

@@ -11,9 +11,9 @@
   <body>
   <section class="section">
     <div class="container">
-        <h1 class="title is-1">GitGoin</h1>
+        <h1 class="title">GitGoin</h1>
       <p class="subtitle">
-        Current market and news information for <strong>Cryptocurrencies!</strong>
+        Current market and news information for <bold>CRYPTOCURRENCIES!</bold>
       </p>
     </div>
     <div class="field has-addons">
@@ -28,8 +28,10 @@
     </div>
   </section>
 
-  <div class="columns">
-    <div class="column is-one-third" id="Watchlist">
+  
+  <div class="columns is-flex">
+    <aside>
+    <div class="column" id="Watchlist">
       Watchlist
       <div class="saved-list">
         <div class="card">
@@ -43,8 +45,15 @@
       
       <!-- saved stocks by user -->
     </div>
+    </aside>
+    <div class="data is-flex-direction-column">
     <div class="column" id="market">
       Market Data
+      <!-- Add button to add the line from API to the watchlist.
+      <div class="Button are small">
+        <button class="addButton">+</button>
+      </div>
+      -->
     </div>
     <div class="column" id="news">
       <h1>News</h1>
