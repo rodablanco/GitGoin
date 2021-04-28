@@ -90,10 +90,27 @@ li {
     list-style: none;
 }
 
-img {
+#market img {
     height: 10vh;
     width: 10vh;
 }
 .card {
     margin-bottom: 5vh;
 }
+
+#news {
+    display: inline-flex;
+    flex-wrap: wrap;
+    }
+    #news .card { 
+        font-size: 15px;
+        width: 25vh; 
+        height: 25vh; 
+        border-radius: 5px; 
+        border: rgb(93, 214, 245) solid;
+        overflow-x: scroll; 
+    }
+    #news .column {
+        justify-content: space-between;
+        width: 100%
+    }

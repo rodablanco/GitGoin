@@ -13,30 +13,25 @@ $.getJSON("https://api.coingecko.com/api/v3/search/trending", function (data) {
 })
 
 
+var Ticker = "";
 
+Ticker = $('.input').val().trim();
 
+$.getJSON('https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd',function(data){
+    console.log(data);
 
-var Ticker = document.querySelector(".input")
+    for (i=0; i < data.data.length; i++) {
+    var displayNAme = data.data[i].display_name; 
+    var screenName = data.data[i].twitter_screen_name; 
+    var profileImg = data.data[i].profile_image;
+    var body = data.data[i].body;
 
-var Ticker = document.querySelector(".input");
-var tickerMap = {};
-
-$.getJSON(`https://api.coingecko.com/api/v3/coins/list`, function (data) {
-    data.forEach(function (item) {
-        tickerMap[item.symbol.toLowerCase()] = item.id
-    })
-    // console.log(tickerMap)
-})
-
-
-
-$('.search-btn').click(function () {
-    var ticker = Ticker.value.trim().toLowerCase();
-    var data = localStorage.getItem(ticker);
-    if (data) {
-        console.log(JSON.parse(data))
-    } else {
-        getData(ticker)
+    $('#news').append(`<div class=card>
+    <p class="displayName">${displayNAme}</p>
+    <img src="${profileImg}" class="profileImage">
+    <p class="screenName">@${screenName}</p>
+    <p class="body">${body}</p>
+  </div>`)
     }
 })
 
