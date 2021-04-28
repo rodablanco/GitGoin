@@ -26,6 +26,16 @@
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
+<<<<<<< HEAD
+=======
+
+    border-radius: 15px; 
+}
+
+.section {
+    display:flex; 
+
+>>>>>>> dff9d068a62438f74213b8ba30a56b693fe6bd3d
     border-radius: 30px; 
     padding: 20px;
     height: 100%;
@@ -71,9 +81,13 @@ footer {
 
 aside {
     width: 15%;
+<<<<<<< HEAD
 }
 
 .navbar {
     margin-bottom: 25px;
     background-color: white;
+=======
+
+>>>>>>> dff9d068a62438f74213b8ba30a56b693fe6bd3d
 }
