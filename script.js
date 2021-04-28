@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $.getJSON("https://api.coingecko.com/api/v3/search/trending", function (data) {
     console.log(data);
     for (let i = 0; i < data.coins.length; i++) {
@@ -16,43 +15,66 @@ $.getJSON("https://api.coingecko.com/api/v3/search/trending", function (data) {
 
 
 
-=======
+
 var Ticker = document.querySelector(".input")
 
+var Ticker = document.querySelector(".input");
+var tickerMap = {};
 
-$('.search-btn').click(function(){
-    var ticker = Ticker.value.trim();
+$.getJSON(`https://api.coingecko.com/api/v3/coins/list`, function (data) {
+    data.forEach(function (item) {
+        tickerMap[item.symbol.toLowerCase()] = item.id
+    })
+    // console.log(tickerMap)
+})
+
+
+
+$('.search-btn').click(function () {
+    var ticker = Ticker.value.trim().toLowerCase();
     var data = localStorage.getItem(ticker);
-    if(data){
+    if (data) {
         console.log(JSON.parse(data))
-    }else{
+    } else {
         getData(ticker)
     }
 })
 
-function getData(ticker){
 
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": `https://alpha-vantage.p.rapidapi.com/query?from_currency=${ticker}&function=CURRENCY_EXCHANGE_RATE&to_currency=USD`,
-        "method": "GET",
-        "headers": {
-		"x-rapidapi-key": "6e2a194552msh708477475f34fd7p1cb828jsnac3379c4cc7d",
-		"x-rapidapi-host": "alpha-vantage.p.rapidapi.com"
-	}
-};
 
-$.ajax(settings).done(function (response) {
-    console.log(response);
-    localStorage.setItem(ticker, JSON.stringify(response))
-});
-}
+$.getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h", function (data) {
+    console.log(data);
 
-var str = `${2>3}`
+
+    for (var i = 0; i < data.length; i++) {
+        var id = data[i].symbol.toUpperCase()
+        var image = data[i].image
+        var price = data[i].current_price
+        var marketCapRank = data[i].market_cap_rank
+        $("#market").append(`
+        <div class="card">
+        <li>${marketCapRank}</li>
+        <li>${id}</li>
+        <div class="card-image"><img src="${image}"/>
+        </div>
+        <li>$ ${price}.00</li>
+        
+        </div>
+        `)
+
+    }
+
+})
+
+
+
+
+
+
+
 
 // need to create localStorage
 //need to link stocks with save buttons
 // need to create remove button
 // create search bar function
->>>>>>> dff9d068a62438f74213b8ba30a56b693fe6bd3d
+
