@@ -50,19 +50,27 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=
         var price = data[i].current_price
         var marketCapRank = data[i].market_cap_rank
         $("#market").append(`
-        <div class="card">
+        
+        <button class="data-card">
         <li>${marketCapRank}</li>
         <li>${id}</li>
         <div class="card-image"><img src="${image}"/>
         </div>
         <li>$ ${price}.00</li>
         
-        </div>
+        </button>
+       
         `)
 
     }
 
 })
+//watchlist in progress
+//var marketCards = $('.date-card')
+// var watchlist = function() {
+
+//     if (${'data-card'}.click())
+// }
 
 
 

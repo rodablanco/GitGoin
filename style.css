@@ -117,6 +117,9 @@ li {
         width: 100%
     }
 
-    .card-title {
-        font-size:20px;
+button.card{
+    width: 19vh;
+    border-radius: 1rem;
+    cursor: grab;
+    box-shadow: 4px 4px;
     }
