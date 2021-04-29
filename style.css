@@ -3,11 +3,13 @@
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: #008cff 0px 0px 10px; 
     border-radius: 30px; 
-    padding: 20px;
-    min-height: 400px;
+    padding: 10px;
+    height: 50vh;
+    overflow-x: scroll;
     color: greenyellow;
     font-weight: bold;
     text-align: center;
+    justify-content: space-between;
 }
 
 #market {
@@ -105,7 +107,7 @@ li {
     #news .card { 
         font-size: 15px;
         width: 25vh; 
-        height: 25vh; 
+        height: 35vh; 
         border-radius: 5px; 
         border: rgb(93, 214, 245) solid;
         overflow-x: scroll; 
@@ -113,4 +115,8 @@ li {
     #news .column {
         justify-content: space-between;
         width: 100%
+    }
+
+    .card-title {
+        font-size:20px;
     }
