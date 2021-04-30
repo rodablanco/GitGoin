@@ -41,7 +41,13 @@
     height: 100%;
     text-align: center;
 }
+@media screen and (max-width: 600px){
+    .section{
+        display:flex;
+        flex-direction: column;
 
+    }
+}
 .section {
     background-color: grey;
 }
@@ -117,9 +123,20 @@ li {
         width: 100%
     }
 
-button.data-card{
+    button.data-card{
     width: 19vh;
     border-radius: 1rem;
     cursor: grab;
     box-shadow: 4px 4px;
     }
+
+    .navbar-item {
+    border: solid 1px;
+    border-radius: 1rem;
+    box-shadow: 2px 2px;
+}
+
+.saved-list {
+    overflow: scroll;
+}
+    

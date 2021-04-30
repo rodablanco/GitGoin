@@ -5,35 +5,38 @@ $.getJSON("https://api.coingecko.com/api/v3/search/trending", function (data) {
         console.log(element)
         var symbol = data.coins[i].item.symbol;
         $("#navbarBasicExample").append(`
-    <a class="navbar-item" id="item1">
+    <a class="navbar-item is-mobile" id="item1">
             ${symbol} <img src="${element.item.thumb} style: max-width: 100px, margin-left: 4px, position: relative, top: 6.5px"/>
         </a>`);
     }
 
 })
-
+var searched = JSON.parse(localStorage.getItem('watchlist')) || []
+renderList()
 var ticker = "BTC";
 // var News = function() {
 ticker = $('.input').val().trim()
 
-$.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=20&sources=news,urls`,function(data){
+$.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=20&sources=news,urls`, function (data) {
     console.log(data);
+    var dupeMap = [];
+    for (i = 0; i < data.data.length; i++) {
+        var publisher = data.data[i].publisher;
+        var title = data.data[i].title;
+        var thumbnail = data.data[i].thumbnail;
+        var description = data.data[i].description;
 
-    for (i=0; i < data.data.length; i++) {
-    var publisher = data.data[i].publisher; 
-    var title = data.data[i].title; 
-    var thumbnail = data.data[i].thumbnail;
-    var description = data.data[i].description;
-
-
-    $('#news').append(`<div class=card>
-    <p class="publisher">${publisher}</p>
-    <img src="${thumbnail}" class="thumbnail">
-    <p class="card-title">${title}</p>
-    <p class="description">${description}</p>
-  </div>`)
+        if (!dupeMap.includes(title)) {
+            dupeMap.push(title)
+            $('#news').append(`<div class=card>
+        <p class="publisher">${publisher || "Anonymous"}</p>
+        <img src="${thumbnail}" onerror="this.src='https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2090134/settings_images/5K2UMED5Qh6365tuYK1v_bitcoin1.jpg'" class="thumbnail">
+        <p class="card-title">${title}</p>
+        <p class="description">${description}</p>
+        </div>`)
+        }
     }
-    
+
 })
 // }
 
@@ -45,15 +48,16 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=
 
 
     for (var i = 0; i < data.length; i++) {
-        var id = data[i].symbol.toUpperCase()
+        var cryptoName = data[i].symbol.toUpperCase()
         var image = data[i].image
         var price = data[i].current_price
         var marketCapRank = data[i].market_cap_rank
+
         $("#market").append(`
         
-        <button class="data-card">
+        <button id=${i} class="data-card" data-symbol=${cryptoName}>
         <li>${marketCapRank}</li>
-        <li>${id}</li>
+        <li>${cryptoName}</li>
         <div class="card-image"><img src="${image}"/>
         </div>
         <li>$ ${price}.00</li>
@@ -65,13 +69,23 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=
     }
 
 })
-//watchlist in progress
-//var marketCards = $('.date-card')
-// var watchlist = function() {
+//watchlist 
 
-//     if (${'data-card'}.click())
-// }
+var click = $(".data").on('click', '.data-card', function () {
+    var data = $(this).attr('data-symbol');
+    if (!searched.includes(data)) searched.push(data)
+    localStorage.setItem("watchlist", JSON.stringify(searched))
+})
+function renderList() {
 
+    for (var i = 0; i < searched.length; i++) {
+        var arrSymbol = searched[i];
+        $('.saved-list').append(`
+        <button>${arrSymbol}</button>`)
+    }
+
+
+}
 
 
 
