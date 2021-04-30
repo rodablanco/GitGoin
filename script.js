@@ -17,28 +17,36 @@ var ticker = "";
 var News = function(symbol) {
 ticker = $('.input').val().trim() || symbol; 
 
-$.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=12&sources=news,urls`,function(data){
+$.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=20&sources=news,urls`,function(data){
     console.log(data)
     if (!data.data.length){
         return; 
     };
 
     $('#news').empty();
-
+    var dupeMap = [];
     for (i=0; i < data.data.length; i++) {
     var publisher = data.data[i].publisher; 
     var title = data.data[i].title; 
     var thumbnail = data.data[i].thumbnail;
     var description = data.data[i].description;
+    var url = data.data[i].url;
 
+    if(!dupeMap.includes(title)){
+        dupeMap.push(title)
 
-    $('#news').append(`<div class=card>
-    <p class="publisher">${publisher}</p>
-    <img src="${thumbnail}" class="thumbnail">
+    $('#news').append(`<a target="_blank" href=${url}>
+    <div class=card>
+    <p class="publisher">${publisher || 'Anonymous'}</p>
+    <img src="${thumbnail}"onerror="this.src='https://www.regtechtimes.com/wp-content/uploads/2019/01/bitcoin125.jpg'"class="thumbnail">
     <p class="card-title">${title}</p>
     <p class="description">${description}</p>
-  </div>`)
+  </div>
+  </a>`)
     }
+}
+
+    
     
 }).fail(function(error){
     console.error(error); 
