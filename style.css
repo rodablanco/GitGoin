@@ -111,6 +111,8 @@ li {
         border-radius: 5px; 
         border: rgb(93, 214, 245) solid;
         overflow-x: scroll; 
+        box-shadow: 4px 4px;
+        border-radius: 1rem;
     }
     #news .column {
         justify-content: space-between;
@@ -123,3 +125,12 @@ button.data-card{
     cursor: grab;
     box-shadow: 4px 4px;
     }
+
+span {
+    color:rgb(218, 18, 211)
+}
+
+footer {
+    text-align: center;
+    font-size: 30px;
+}

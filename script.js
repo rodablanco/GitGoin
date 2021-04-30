@@ -12,12 +12,18 @@ $.getJSON("https://api.coingecko.com/api/v3/search/trending", function (data) {
 
 })
 
-var ticker = "BTC";
-// var News = function() {
-ticker = $('.input').val().trim()
+var ticker = "";
 
-$.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=20&sources=news,urls`,function(data){
-    console.log(data);
+var News = function(symbol) {
+ticker = $('.input').val().trim() || symbol; 
+
+$.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=12&sources=news,urls`,function(data){
+    console.log(data)
+    if (!data.data.length){
+        return; 
+    };
+
+    $('#news').empty();
 
     for (i=0; i < data.data.length; i++) {
     var publisher = data.data[i].publisher; 
@@ -34,14 +40,18 @@ $.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&s
   </div>`)
     }
     
+}).fail(function(error){
+    console.error(error); 
 })
-// }
+}
 
-// $('.search-btn').click(News);
+News('BTC'); 
+$('.search-btn').click(News);
 
 
 $.getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h", function (data) {
     console.log(data);
+
 
 
     for (var i = 0; i < data.length; i++) {
