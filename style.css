@@ -42,7 +42,7 @@
     border-radius: 30px; 
     min-height: 100px;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     margin-left: -2px;
     margin-bottom: 10px;
     min-width: 0;
@@ -55,6 +55,17 @@
     height: 100%;
     text-align: center;
     background-color: grey;
+}
+
+@media screen and (max-width: 600px) {
+    .section {
+        display: flex; 
+        flex-direction: column;
+    }
+    title {
+        display: flex;
+        text-align: center;
+    }
 }
 
 section {
@@ -92,6 +103,7 @@ body {
     color: greenyellow;
     font-size: 20px;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 footer {
