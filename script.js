@@ -11,40 +11,58 @@ $.getJSON("https://api.coingecko.com/api/v3/search/trending", function (data) {
     }
 
 })
+
+
 var searched = JSON.parse(localStorage.getItem('watchlist')) || []
 renderList()
-var ticker = "BTC";
-// var News = function() {
-ticker = $('.input').val().trim()
+var ticker = "";
 
-$.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=20&sources=news,urls`, function (data) {
-    console.log(data);
+var News = function(symbol) {
+ticker = $('.input').val().trim() || symbol; 
+
+$.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=20&sources=news,urls`,function(data){
+    console.log(data)
+    if (!data.data.length){
+        return; 
+    };
+
+    $('#news').empty();
     var dupeMap = [];
-    for (i = 0; i < data.data.length; i++) {
-        var publisher = data.data[i].publisher;
-        var title = data.data[i].title;
-        var thumbnail = data.data[i].thumbnail;
-        var description = data.data[i].description;
+    for (i=0; i < data.data.length; i++) {
+    var publisher = data.data[i].publisher; 
+    var title = data.data[i].title; 
+    var thumbnail = data.data[i].thumbnail;
+    var description = data.data[i].description;
+    var url = data.data[i].url;
 
-        if (!dupeMap.includes(title)) {
-            dupeMap.push(title)
-            $('#news').append(`<div class=card>
-        <p class="publisher">${publisher || "Anonymous"}</p>
-        <img src="${thumbnail}" onerror="this.src='https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2090134/settings_images/5K2UMED5Qh6365tuYK1v_bitcoin1.jpg'" class="thumbnail">
-        <p class="card-title">${title}</p>
-        <p class="description">${description}</p>
-        </div>`)
-        }
+    if(!dupeMap.includes(title)){
+        dupeMap.push(title)
+
+    $('#news').append(`<a target="_blank" href=${url}>
+    <div class=card>
+    <p class="publisher">${publisher || 'Anonymous'}</p>
+    <img src="${thumbnail}"onerror="this.src='https://www.regtechtimes.com/wp-content/uploads/2019/01/bitcoin125.jpg'"class="thumbnail">
+    <p class="card-title">${title}</p>
+    <p class="description">${description}</p>
+  </div>
+  </a>`)
     }
+}
 
+    
+    
+}).fail(function(error){
+    console.error(error); 
 })
-// }
+}
 
-// $('.search-btn').click(News);
+News('BTC'); 
+$('.search-btn').click(News);
 
 
 $.getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=24h", function (data) {
     console.log(data);
+
 
 
     for (var i = 0; i < data.length; i++) {
