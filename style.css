@@ -10,6 +10,8 @@
     font-weight: bold;
     text-align: center;
     justify-content: space-between;
+    width: 97%;
+    margin-left: 20px;
 }
 
 #market {
@@ -18,20 +20,26 @@
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
     border-radius: 30px; 
     height: 50vh;
-    width: 150vh;
+    width: 97%;
     overflow-x: scroll;
     min-height: 200px;
     text-align: center;
-    padding: 20px;
     margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 #Watchlist {
     font-size: 30px;
     border: 5px rgb(75, 137, 231) solid; 
     box-shadow: rgb(0, 140, 255) 0px 0px 10px;
-    height: 90vh;
-    border-radius: 15px; 
+    border-radius: 30px;
+    height: fit-content;
+    border-radius: 30px; 
+    min-height: 100px;
+    text-align: center;
+    width: 100%;
+    margin-left: -2px;
+    margin-bottom: 10px;
 }
 
 .section {
