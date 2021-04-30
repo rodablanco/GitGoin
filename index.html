@@ -3,15 +3,25 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitGoin-Test</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <link rel="stylesheet" href="./style.css">
 </head>
-
+<style>
+  @media only screen and(max-device-width: 600px) {
+    #hellokitty {
+        flex-direction: column!important;
+    }
+    *{
+      color: white;
+      font-size: 400px;
+    }
+}
+</style>
 <body>
-  <section class="section">
+  <section id="hellokitty" class="section">
     <div class="container">
       <h1 class="title">GitGoin</h1>
       <p class="subtitle">
@@ -30,7 +40,7 @@
     </div>
   </section>
   <section>
-    <nav class="navbar" role="navigation" aria-label="main navigation" style="display: flex;">
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="display: flex; flex-shrink: 5;">
 
       <div id="navbarBasicExample" style="display: flex; justify-content: space-evenly; width: 100%;">
       </div>
@@ -40,15 +50,15 @@
 
 
   <div class="columns is-flex">
-      <div class="column" id="Watchlist">
+      <!--<div class="column" id="Watchlist">
         Watchlist
         <div class="saved-list">
 
         </div>
-      </div>
+      </div>-->
   </div>
     <div class="data is-flex-direction-column">
-      <div class="column" id="market" type=none>
+      <div class="column" id="market" style="color: greenyellow; font-weight: bold;" type=none>
         Market Data
 
         <!-- <figure id="symbolImg" class="image "> -->
