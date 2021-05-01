@@ -106,10 +106,8 @@ function renderList() {
         <button>${arrSymbol}</button>`)
     }
 
-
+  
 }
-
-
 
 
 
