@@ -8,3 +8,29 @@ the top 200 cryptocurrencies by market cap. There is also watchlist which allows
 currencies to the watchlist so they know which ones to research and work with. There is a search bar that works with the news
 segment that allows the users to search for a crypto and it will display the most up to date news information regarding the 
 searched cryptocurrency.
+
+# HTML:
+Our team created sections in order to split the project up into four main parts. 
+
+SECTION 1:
+The first part is the header which displays the websites name and description. It also displays the search bar which has functionality regarding the fourth part of the html part of the project. The header also contains a navigation panel that displays the 7 most trending cryptocurrencies as buttons.
+
+
+SECTION 2:
+The second part of the project is the watchlist. The watchlist works alongside the market data section which is section3 of the project.
+The watchlist displays the recently clicked on buttons in the market data section.
+
+SECTION 3:
+The third part of the project is the Market data section. This displays the top 200 cryptocurrencies by market cap. There is also 
+button functionality of the listed 200 cryptos so that if the user clicks the button, it will add the crypto to the watchlist.
+
+SECTION 4:
+The last part of the project is the news segment, this displays the most up to date news regarding cryptocurrencies. If you use the search bar from section 1, and search for a specific cryptocurrency, it will display news segments specific to the searched for coin.
+
+# CSS
+We used Bulma.io as our main css framework. This allowed us to use bulma attributes to style our webpage. Once we used the bulma styling, we were able to incorporate our own styling in the code to work alongside bulma to gain our desired format for our webpage. We were able to utilize the overflow function in css to style the webpage dynamically to work with all sizes of screens.
+
+# Javascript
+Our team used javascript to include APIs into our webpage. These APIs serve as our webpage's main functionality by incorporating it into the market data and news sections. We used javascript to work with our search bar so that it would work alongside the news API.
+
+
