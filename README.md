@@ -38,5 +38,8 @@ We used Bulma.io as our main css framework. This allowed us to use bulma attribu
 Our team used javascript to include APIs into our webpage. These APIs serve as our webpage's main functionality by incorporating it into the market data and news sections. We used javascript to work with our search bar so that it would work alongside the news API.
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img5.png)
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img7.png)
+![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img8.png)
+![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img9.png)
+![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img10.png)
 
 
