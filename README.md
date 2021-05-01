@@ -1,8 +1,6 @@
 # GitGoin
 Get going with your investments. 
 
-<<<<<<< HEAD
-=======
 Website functionality for iphone x and web browser is fixed.
 
 This is a project for beginner and experienced cryptocurrency investors. There is a market data section which displays
@@ -38,11 +36,17 @@ We used Bulma.io as our main css framework. This allowed us to use bulma attribu
 
 # Javascript
 Our team used javascript to include APIs into our webpage. These APIs serve as our webpage's main functionality by incorporating it into the market data and news sections. We used javascript to work with our search bar so that it would work alongside the news API.
+<br>
+
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img5.png)
+
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img7.png)
+
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img8.png)
+
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img9.png)
+
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img10.png)
 
->>>>>>> ef9478267a2ad0ca7138a2a2d8b4a167a6557617
+
 
