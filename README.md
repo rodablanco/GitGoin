@@ -1,6 +1,8 @@
 # GitGoin
 Get going with your investments. 
 
+<<<<<<< HEAD
+=======
 Website functionality for iphone x and web browser is fixed.
 
 This is a project for beginner and experienced cryptocurrency investors. There is a market data section which displays
@@ -42,4 +44,5 @@ Our team used javascript to include APIs into our webpage. These APIs serve as o
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img9.png)
 ![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img10.png)
 
+>>>>>>> ef9478267a2ad0ca7138a2a2d8b4a167a6557617
 
