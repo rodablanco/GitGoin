@@ -15,18 +15,21 @@ $.getJSON("https://api.coingecko.com/api/v3/search/trending", function (data) {
 
 var searched = JSON.parse(localStorage.getItem('watchlist')) || []
 renderList()
+//universal variable to change parameter value.
 var ticker = "";
-
+//named the function so we can call it inside other functions.
 var News = function(symbol) {
 ticker = $('.input').val().trim() || symbol; 
-
+//the function pulls data from the api and creates a card to append to the news div. 
 $.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&symbol=${ticker}&limit=20&sources=news,urls`,function(data){
     console.log(data)
+    //
     if (!data.data.length){
         return; 
     };
-
+    //emptys previous news on every search.
     $('#news').empty();
+    //turns data into an objec
     var dupeMap = [];
     for (i=0; i < data.data.length; i++) {
     var publisher = data.data[i].publisher; 
@@ -34,10 +37,10 @@ $.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&s
     var thumbnail = data.data[i].thumbnail;
     var description = data.data[i].description;
     var url = data.data[i].url;
-
+    //a statemt to prevent duplicates  
     if(!dupeMap.includes(title)){
         dupeMap.push(title)
-
+    //appends a card to the html to include all data gathered from api
     $('#news').append(`<a target="_blank" href=${url}>
     <div class=card>
     <p class="publisher">${publisher || 'Anonymous'}</p>
@@ -50,13 +53,14 @@ $.getJSON(`https://api.lunarcrush.com/v2?data=feeds&key=m28t77w3quhag6eg8jdnmd&s
 }
 
     
-    
+    //trying to catch errors on page. 
 }).fail(function(error){
     console.error(error); 
 })
 }
-
+//makes BTC the default news when page loads
 News('BTC'); 
+//search button calls News function
 $('.search-btn').click(News);
 
 //pulling coingecko api
@@ -93,6 +97,7 @@ var click = $(".data").on('click', '.data-card', function () {
     var data = $(this).attr('data-symbol');
     if (!searched.includes(data)) searched.push(data)
     localStorage.setItem("watchlist", JSON.stringify(searched))
+    //calls news function to run data from card value
     News(data);
     renderList();
 })
