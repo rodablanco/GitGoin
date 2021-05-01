@@ -14,7 +14,7 @@ Our team created sections in order to split the project up into four main parts.
 
 SECTION 1:
 The first part is the header which displays the websites name and description. It also displays the search bar which has functionality regarding the fourth part of the html part of the project. The header also contains a navigation panel that displays the 7 most trending cryptocurrencies as buttons.
-
+![alt text](https://github.com/jjarquin1/GitGoin/blob/main/images/img1.png)
 
 SECTION 2:
 The second part of the project is the watchlist. The watchlist works alongside the market data section which is section3 of the project.
