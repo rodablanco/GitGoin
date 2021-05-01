@@ -103,16 +103,25 @@ function renderList() {
     for (var i = 0; i < searched.length; i++) {
         var arrSymbol = searched[i];
         $('.saved-list').append(`
-        <button>${arrSymbol}</button>`)
+        <button id="delete">${arrSymbol}</button>`)
     }
 
   
 }
 
+// $('#delete').on('click', function(){
+//     localStorage.removeItem("watchlist")
+// })
 
+$('#delete').dblclick(function(){
+    
 
+        searched.splice(Watchlist, 1)
+    }
+)
+// $('saved').on('click', function(event) {
 
-
+// })
 
 // need to create localStorage
 //need to link stocks with save buttons
