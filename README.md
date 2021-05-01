@@ -1,7 +1,10 @@
 # GitGoin
 Get going with your investments. 
 
-Website functionality for iphone x and web browser is fixed.
+# User Story
+As a beginner in the Cryptocurrency world,
+I want a website that will allow me to research current news on my selected currencies,
+So that I can have necessary information when i start to make my first investments.
 
 This is a project for beginner and experienced cryptocurrency investors. There is a market data section which displays
 the top 200 cryptocurrencies by market cap. There is also watchlist which allows users to be able to add their own crypto-
