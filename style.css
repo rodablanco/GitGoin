@@ -54,7 +54,8 @@
     text-align: center;
     background-color: grey;
 }
-
+/*The media screen function allowed the search bar to be collapsed under the title after the screen shrinks less
+than 600px.*/
 @media screen and (max-width: 600px) {
     .section {
         display: flex; 
@@ -65,11 +66,11 @@
         text-align: center;
     }
 }
-
+/*VW allowed the website to work better with the screen collapsing.*/
 section {
     max-width:100vw;
 }
-
+/*added overflow function so that users can scroll through data.*/
 #navbarBasicExample{
     overflow-x: scroll;
     max-width: 100vw
@@ -150,7 +151,7 @@ li {
         justify-content: space-between;
         width: 100%
     }
-/* styling cards in Market Data  */
+
     button.data-card{
     width: 19vh;
     border-radius: 1rem;
@@ -176,20 +177,4 @@ footer {
     text-align: center;
     font-size: 30px;
 }
-/* closing button for watchlist */
-.close {
-    cursor: pointer;
-    position: relative;
-    left: 1vw;
-    bottom: 2vh;
 
-   
-   
-  }
-  
-  .close:hover {background: #bbb;}
-
-  #delete{
-      justify-content: center;
-      
-  }
