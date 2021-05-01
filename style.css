@@ -150,7 +150,7 @@ li {
         justify-content: space-between;
         width: 100%
     }
-
+/* styling cards in Market Data  */
     button.data-card{
     width: 19vh;
     border-radius: 1rem;
@@ -176,4 +176,20 @@ footer {
     text-align: center;
     font-size: 30px;
 }
+/* closing button for watchlist */
+.close {
+    cursor: pointer;
+    position: relative;
+    left: 1vw;
+    bottom: 2vh;
 
+   
+   
+  }
+  
+  .close:hover {background: #bbb;}
+
+  #delete{
+      justify-content: center;
+      
+  }

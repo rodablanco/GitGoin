@@ -63,12 +63,12 @@ News('BTC');
 //search button calls News function
 $('.search-btn').click(News);
 
-
+//pulling coingecko api
 $.getJSON("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=24h", function (data) {
     console.log(data);
 
 
-
+    //displaying crypto to Market Data
     for (var i = 0; i < data.length; i++) {
         var cryptoName = data[i].symbol.toUpperCase()
         var image = data[i].image
@@ -99,37 +99,29 @@ var click = $(".data").on('click', '.data-card', function () {
     localStorage.setItem("watchlist", JSON.stringify(searched))
     //calls news function to run data from card value
     News(data);
+    renderList();
 })
 
-
-
+//rendering list to page
 function renderList() {
-
+   
+    $('.saved-list').empty();
     for (var i = 0; i < searched.length; i++) {
         var arrSymbol = searched[i];
         $('.saved-list').append(`
-        <button id="delete">${arrSymbol}</button>`)
+        <li id="delete" style="display:flex"><span>${arrSymbol}</span><span id="${i}" class="close">x</span></li>`)
+       
     }
-
-  
+    
 }
 
-// $('#delete').on('click', function(){
-//     localStorage.removeItem("watchlist")
-// })
+// deleting one item on watchlist when clicked
+var deleteList = $('.saved-list').on("click", '.close', function() {
 
-$('#delete').dblclick(function(){
-    
+var index = $(this).attr('id')
+searched.splice(index,1);
+renderList()
+})
 
-        searched.splice(Watchlist, 1)
-    }
-)
-// $('saved').on('click', function(event) {
 
-// })
-
-// need to create localStorage
-//need to link stocks with save buttons
-// need to create remove button
-// create search bar function
 

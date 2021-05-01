@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitGoin-Test</title>
+  <title>GitGoin</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <link rel="stylesheet" href="./style.css">
@@ -40,24 +40,26 @@
     </div>
   </section>
   <section>
+    <!--This is pulled from bulma and is acting as the main navigation panel.-->
     <nav class="navbar" role="navigation" aria-label="main navigation" style="display: flex; flex-shrink: 5;">
-
+      <!--These are the placeholders for the images and names created dynamically in the nav panel.-->
       <div id="navbarBasicExample" style="display: flex; justify-content: space-evenly; width: 100%;">
       </div>
       </div>
     </nav>
   </section>
 
-
+  <!--Placed the watchlist in a column stacked on top of the other two main sections.-->
   <div class="columns is-flex" style="width: 100vw;">
       <div class="column" id="Watchlist">
         Watchlist
         <div class="card">
-            <ol class="saved-list"></ol>
+            <ul class="saved-list"></ul>
         </div>
       </div>
   </div>
     <div class="data is-flex-direction-column">
+      <!--Inline styling for this title of the section because tagging this section was not working correctly in CSS.-->
       <div class="column" id="market" style="color: greenyellow; font-weight: bold; text-decoration: underline;" type=none>
         Market Data
 
@@ -75,6 +77,7 @@
           
         </div>
       </div>
+      <!--Created third column for news segments.-->
       <div class="column" id="news"></div>
       
 
