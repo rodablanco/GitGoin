@@ -178,3 +178,13 @@ footer {
     font-size: 30px;
 }
 
+#delete {
+
+    justify-content: center;
+}
+
+.close {
+    position: relative;
+    bottom: 2vh;
+    left: 1vw;
+}
